@@ -14,7 +14,8 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://df4a-182-253-159-41.ngrok-free.app/so/login",
+        "http://demin-backend.wit.id/so/login",
+        // "https://df4a-182-253-159-41.ngrok-free.app/so/login",
         form
       );
       alert(response);
