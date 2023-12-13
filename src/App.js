@@ -14,11 +14,17 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://demin-backend.wit.id/so/login",
+        "https://demin-backend.wit.id/auth/master_data/water_type/create",
         // "https://df4a-182-253-159-41.ngrok-free.app/so/login",
-        form
+        form,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer c2ebc295-085f-4062-89f0-fe54f83c83c7",
+          },
+        }
       );
-      alert(response);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +33,12 @@ function App() {
   return (
     <>
       <form>
-        <input type="text" name="username" id="username" onChange={onChange} />
+        <input
+          type="text"
+          name="jenis_air"
+          id="jenis_air"
+          onChange={onChange}
+        />
         <input type="text" name="password" id="password" onChange={onChange} />
         <button onClick={onClickGuys}>Submit</button>
       </form>
